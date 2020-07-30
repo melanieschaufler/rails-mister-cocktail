@@ -1,0 +1,20 @@
+<h1><%= @cocktail.name %></h1>
+
+<% @cocktail.doses.each do |dose| %>
+  <ul>
+    <li>
+      <%= dose.description %>
+      <%= dose.ingredient.name %>
+      <%= link_to 'Delete', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </li>
+  </ul>
+<% end %>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+  <%= f.input :ingredient_id, as: :select, collection: @ingredients.order(:name) %>
+  <%= f.input :description %>
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'Back', cocktails_path %>
+
