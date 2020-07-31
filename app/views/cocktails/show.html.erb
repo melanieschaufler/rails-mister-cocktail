@@ -7,7 +7,7 @@
     <li>
       <%= dose.description %>
       <%= dose.ingredient.name %>
-      <%= link_to 'Delete', dose, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Delete', dose, class:"btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' }%>
     </li>
   </ul>
 <% end %>
@@ -18,6 +18,6 @@
   <%= f.submit %>
 <% end %>
 
-<%= link_to 'Delete Cocktail', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', cocktails_path %>
+<%= link_to 'Delete Cocktail', cocktail_path(@cocktail), class:"btn btn-primary", method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', cocktails_path, class:"btn btn-primary" %>
 
