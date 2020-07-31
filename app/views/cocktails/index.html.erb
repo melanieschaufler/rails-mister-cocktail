@@ -1,11 +1,15 @@
 <div class="wrapper-banner">
-<h1>Cocktails</h1>
+<h1>Discover our Gin Cocktails</h1>
 </div>
 
 <ul>
 <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+
+  <li><%= cl_image_tag cocktail.photo.key, width: 350, crop: :fill %></br>
+    <%= link_to cocktail.name, cocktail_path(cocktail) %></li>
 <% end %>
 </ul>
 
+<div class="button-wrapper">
 <%= link_to 'New Cocktail', new_cocktail_path, class:"btn btn-primary" %>
+</div>
